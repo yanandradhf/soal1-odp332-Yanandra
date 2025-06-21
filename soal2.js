@@ -68,17 +68,29 @@ console.log(checkMature(-1)); // invalid input
 //  * Gunakan if-else dan function yang mengembalikan string
 //  */
 
-// function scoreReport() {
+function scoreReport() {
+if (typeof inputScore !== "number" || inputScore < 0 || inputScore > 100) {
+    return "invalid input";
+  } else if (inputScore >= 90) {
+    return "A";
+  } else if (inputScore >= 80) {
+    return "B";
+  } else if (inputScore >= 70) {
+    return "C";
+  } else if (inputScore >= 60) {
+    return "D";
+  } else {
+    return "E";
+  }
+}
 
-// }
-
-// console.log(scoreReport(90)); // A
-// console.log(scoreReport(89)); // B
-// console.log(scoreReport(75)); // C
-// console.log(scoreReport(59)); // E
-// console.log(scoreReport(101)); // invalid input
-// console.log(scoreReport(-1)); // invalid input
-// console.log(scoreReport("sembilan puluh")); // invalid input
+console.log(scoreReport(90)); // A
+console.log(scoreReport(89)); // B
+console.log(scoreReport(75)); // C
+console.log(scoreReport(59)); // E
+console.log(scoreReport(101)); // invalid input
+console.log(scoreReport(-1)); // invalid input
+console.log(scoreReport("sembilan puluh")); // invalid input
 
 
 
@@ -122,21 +134,20 @@ loopCheckOddEven("lima") // invalid input
 //  * Buat program yang menjumlahkan semua angka dari 1 sampai dengan 100 menggunakan loop. Gunakan function yang mengirimkan value hasil penjumlahan tersebut
 //  */
 
-// function totalValue(inputNumber) {
-//     if (typeof inputNumber === "number"){
-//         let totalNumber = 0
-//         for (let index = 1; index <=inputNumber;  index++){
-//             totalNumber = totalNumber + index
-//         }
-//         console.log(totalNumber)
-//     }else {
-//         console.log("Invalid Number")
-//     }
+function totalValue(inputNumber) {
+  if (typeof inputNumber === "number") {
+    let totalNumber = 0;
+    for (let index = 1; index <= inputNumber; index++) {
+      totalNumber = totalNumber + index;
+    }
+    return totalNumber;
+  } else {
+    return "invalid input";
+  }
+}
 
-// }
-
-// console.log(totalValue(100)); // 5050
-// console.log(totalValue("empat")); // invalid input
+console.log(totalValue(100)); // 5050
+console.log(totalValue("empat")); // invalid input
 
 
 
@@ -146,13 +157,29 @@ loopCheckOddEven("lima") // invalid input
 //  * Buat program yang menerima sebuah string, lalu hitung berapa banyak huruf vokal (a, e, i, o, u) di dalam string tersebut. Gunakan function untuk mengembalikan value total jumlah huruf vocal
 //  */
 
-// function checkVowels() {
 
-// }
+const vocals = ["a", "i", "u", "e", "o"];
 
-// console.log(checkVowels("I Love JavaScript")); // 6
-// console.log(checkVowels("mie ayam")); //4
+function checkVowels(inputString) {
+  let count = 0;
 
+  if (typeof inputString !== "string") {
+    return "invalid input";
+  } else {
+    for (let index = 0; index < inputString.length; index++) {
+      const char = inputString[index].toLowerCase();
+
+      if (vocals.includes(char)) {
+        count++;
+      }
+    }
+  }
+
+  return count;
+}
+
+console.log(checkVowels("I Love JavaScript")); // 6
+console.log(checkVowels("mie ayam")); //4
 
 
 // /**
@@ -168,13 +195,28 @@ loopCheckOddEven("lima") // invalid input
 //  * 5. RETURN string "Vokal" atau "Konsonan" sesuai dengan nilai char.
 //  */
 
-// function checkVowelConsonant(char) {
-//     // code di scope ini yaa
-// }
 
-// console.log(checkVowelConsonant('A')); // Output: "Vokal"
-// console.log(checkVowelConsonant('b')); // Output: "Konsonan"
-// console.log(checkVowelConsonant('a')); // Output: "Vokal"
+function checkVowelConsonant(inputChar) {
+  // code di scope ini yaa
+  if (typeof inputChar !== "string") {
+    return "invalid input";
+  } else {
+    for (let index = 0; index < inputChar.length; index++) {
+      const char = inputChar[index].toLowerCase();
+
+      if (vocals.includes(char)) {
+        return "Vokal";
+      } else {
+        return "Konsonan";
+      }
+    }
+  }
+}
+
+
+console.log(checkVowelConsonant('A')); // Output: "Vokal"
+console.log(checkVowelConsonant('b')); // Output: "Konsonan"
+console.log(checkVowelConsonant('a')); // Output: "Vokal"
 
 
 
@@ -300,10 +342,17 @@ console.log(reverseArray(['a', 'b', 'c'])); // Output: ['c', 'b', 'a']
 //  * 
 //  */
 
-// const isPalindrome = (inputUser) => {
+const isPalindrome = (inputUser) => {
+  let reversedArray = [];
+  let splittedInput = inputUser.split("");
 
-// }
+  for (let index = splittedInput.length - 1; index >= 0; index--) {
+    reversedArray.push(splittedInput[index]);
+  }
 
-// console.log(isPalindrome("kasur rusak")); // true
-// console.log(isPalindrome("kodok")); // true
-// console.log(isPalindrome("makan malam")); // false
+  return reversedArray.join("") === splittedInput.join("");
+};
+
+console.log(isPalindrome("kasur rusak")); // true
+console.log(isPalindrome("kodok")); // true
+console.log(isPalindrome("makan malam")); // false
