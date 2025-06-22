@@ -5,6 +5,8 @@
  */
 
 function checkOddEven(number) {
+    console.log("===> SOAL 1");
+    
     let status = ""
     
     if (typeof number === "number"){
@@ -34,6 +36,7 @@ console.log(checkOddEven("enam")); // invalid input
 //  */
 
 function checkMature(number) {
+  console.log("===> SOAL 2");
   let status = ""
     if (typeof number === "number" && number > 0){
          if (number >=18 ){
@@ -69,6 +72,7 @@ console.log(checkMature(-1)); // invalid input
 //  */
 
 function scoreReport(inputScore) {
+  console.log("===> SOAL 3");
   
 if (typeof inputScore !== "number" || inputScore < 0 || inputScore > 100) {
     return "invalid input";
@@ -102,6 +106,7 @@ console.log(scoreReport("sembilan puluh")); // invalid input
 //  */
 
 function loopCheckOddEven(number) {
+  console.log("===> SOAL 4");
 let status = ""
     if (typeof number === "number" && number > 0 && number <= 20){
         for (let index = 1; index <= number; index++) {
@@ -136,6 +141,7 @@ loopCheckOddEven("lima") // invalid input
 //  */
 
 function totalValue(inputNumber) {
+  console.log("===> SOAL 5");
   if (typeof inputNumber === "number") {
     let totalNumber = 0;
     for (let index = 1; index <= inputNumber; index++) {
@@ -162,6 +168,7 @@ console.log(totalValue("empat")); // invalid input
 const vocals = ["a", "i", "u", "e", "o"];
 
 function checkVowels(inputString) {
+  console.log("===> SOAL 6");
   let count = 0;
 
   if (typeof inputString !== "string") {
@@ -198,6 +205,7 @@ console.log(checkVowels("mie ayam")); //4
 
 
 function checkVowelConsonant(inputChar) {
+  console.log("===> SOAL 7");
   // code di scope ini yaa
   if (typeof inputChar !== "string") {
     return "invalid input";
@@ -234,6 +242,7 @@ console.log(checkVowelConsonant('a')); // Output: "Vokal"
 //  */
 
 function canVote(age) {
+  console.log("===> SOAL 8");
     let status = false
     // code di scope ini yaa
     if (age >= 18) {
@@ -271,6 +280,7 @@ console.log(canVote(17)); // false
 //  */
 
 function getDayName(dayNumber) {
+  console.log("===> SOAL 9");
     // code disini
     let status = ""
     if (dayNumber >= 1 && dayNumber <= 7) {
@@ -323,6 +333,7 @@ console.log(getDayName(8)); // Output: "Nomor hari tidak valid"
 //  */
 
 function reverseArray(arr) {
+  console.log("===> SOAL 10");
     // code disini yaa
     let reversed = []
     for (let index = arr.length-1 ; index >= 0; index--) {
@@ -344,6 +355,7 @@ console.log(reverseArray(['a', 'b', 'c'])); // Output: ['c', 'b', 'a']
 //  */
 
 const isPalindrome = (inputUser) => {
+  console.log("===> SOAL 11");
   let reversedArray = [];
   let splittedInput = inputUser.split("");
 
