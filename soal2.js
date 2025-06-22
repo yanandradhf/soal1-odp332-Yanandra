@@ -68,7 +68,8 @@ console.log(checkMature(-1)); // invalid input
 //  * Gunakan if-else dan function yang mengembalikan string
 //  */
 
-function scoreReport() {
+function scoreReport(inputScore) {
+  
 if (typeof inputScore !== "number" || inputScore < 0 || inputScore > 100) {
     return "invalid input";
   } else if (inputScore >= 90) {
